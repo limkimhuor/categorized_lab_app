@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Create root node
+root = FactoryBot.create :category, name: "root"
+# Create child nodes
+child1 = root.children.create name: "child1"
+child2 = root.children.create name: "child2"
+# Create node and connect to child node
+grandchild = FactoryBot.create :category, name: "grandchild1"
+grandchild.move_to_child_of child1

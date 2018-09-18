@@ -1,0 +1,12 @@
+= form_for category do |f|
+  .form-group
+    = f.label :name, "Name"
+    = f.text_field :name, class: "form-control"
+
+  .form-group
+    = f.label :parent_id, "Parent"
+    = f.select :parent_id, support.options_for_select, { selected: f.object.parent_id, include_blank: true },
+      class: "form-control"
+
+  .form-group
+    = f.submit category.new_record? ? "Create" : "Update", class: "btn btn-small btn-primary"
