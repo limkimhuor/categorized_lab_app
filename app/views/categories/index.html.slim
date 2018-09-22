@@ -1,12 +1,9 @@
 h1 List Categories
-table.table.table-striped
-  tbody
-    th Name
-    th colspan=3 Actions
-    - nested_set_options(@categories) {|i| "#{'-' * i.level}#{i.name}"}.each do |name, id|
-      tr
-        td = name
-        td = link_to "Show", category_path(id)
-        td = link_to "Edit", edit_category_path(id)
-        td = link_to "Destroy", category_path(id), method: :delete
-= link_to "New category", new_category_path
+.categories#jstree-categories
+br
+
+= link_to "Create", "#", class: "btn btn-success", id: "create-category"
+'
+= link_to "Rename", "#", class: "btn btn-warning", id: "rename-category"
+'
+= link_to "Delete", "#", class: "btn btn-danger", id: "delete-category"

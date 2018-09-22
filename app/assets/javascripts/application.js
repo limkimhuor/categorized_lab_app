@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jstree.min
+//= require categories
